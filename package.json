@@ -1,0 +1,34 @@
+{
+  "name": "serve-browserify",
+  "version": "1.0.0",
+  "description": "serve browserify bundles over http",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holodex/serve-browserify.git"
+  },
+  "keywords": [
+    "browserify",
+    "http",
+    "http-framework",
+    "serve"
+  ],
+  "author": "ahdinosaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/holodex/serve-browserify/issues"
+  },
+  "homepage": "https://github.com/holodex/serve-browserify#readme",
+  "dependencies": {
+    "browserify-incremental": "^3.0.1",
+    "http-errors": "^1.3.1"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "node-mocks-http": "^1.4.3",
+    "tape": "^4.0.1"
+  }
+}
