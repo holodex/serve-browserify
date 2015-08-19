@@ -25,3 +25,5 @@ function serveBrowserify (files, opts) {
     }
   }
 }
+
+serveBrowserify.args = browserify.args

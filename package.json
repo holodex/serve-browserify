@@ -1,6 +1,6 @@
 {
   "name": "serve-browserify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "serve browserify bundles over http",
   "main": "index.js",
   "scripts": {
