@@ -32,3 +32,38 @@ test('should send bundles', function (t) {
     t.end()
   })
 })
+
+test('should only bundle once if opt.once', function (t) {
+  var send = sendBrowserify({
+    entries: [__dirname + '/fixtures/prebundle.js'],
+    fullPaths: false,
+    once: true
+  })
+
+  testBundle(function () {
+    var done
+    testBundle(function () {
+      done = true
+      t.ok(done, 'bundle already cached')
+    })
+    setTimeout(function () {
+      t.ok(done, 'should have finished bundle by now')
+      t.end()
+    }, 10)
+  })
+
+  function testBundle (cb) {
+    var req = mocks.createRequest({
+      method: 'GET'
+    })
+    var res = mocks.createResponse({
+      eventEmitter: require('events').EventEmitter
+    })
+    send(req, res, function (err) {
+      t.error(err, 'should not error')
+    })
+    res.on('end', function () {
+      cb()
+    })
+  }
+})
